@@ -57,6 +57,7 @@
             font-family: sans-serif;
             color: #444;
             padding-top: 20px;
+			background-color: red;
         }
         .btn{
             margin-top: 20px;
@@ -105,8 +106,12 @@
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, sapiente, delectus officia voluptatum exercitationem veritatis blanditiis obcaecati magnam modi excepturi incidunt dignissimos, ipsa assumenda ratione quisquam in quam esse odio!</p>
     <button class="btn">Download CV</button>
     <button class="btn2">Services</button>
+<<<<<<< HEAD
+    <h1><u>Welcome here</u></h1>
+=======
 	<h1>Welcome to Softtronix Software Solution </h1>
 	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati harum quae pr<br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quam exercitationem laboriosam. Quasi aliqu</p>
+<<<<<<< HEAD
      <h1>About Me</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati harum quae pr<br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quam exercitationem laboriosam. Quasi aliqu</p>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, sapiente, delectus officia voluptatum exercitationem veritatis blanditiis obcaecati magnam modi excepturi incidunt dignissimos, ipsa assumenda ratione quisquam in quam esse odio!</p>
@@ -121,5 +126,9 @@
     <button class="btn2">Services</button>
 	<h1>Welcome to Softtronix Software Solution </h1>
 	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati harum quae pr<br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quam exercitationem laboriosam. Quasi aliqu</p>
+=======
+>>>>>>> 02ae8c6bfe415b60d19b61020a7861e95b96332d
+
+>>>>>>> 6b9db42d5e121c11f3fd50b417fadbfac53d4e53
 </body>
 </html>
