@@ -3,63 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login page</title>
+    <title>Login Page</title>
     <style>
- header{
-    background-color: rgb(49, 170, 207);
-    padding:1em 0;
- }
- nav{
+ body {
+    font-family: sans-serif;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #c299cd;
+}
+.container {
+    display: flex;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.left {
+    width: 60%;
+    padding: 10px;
+}
+.right {
+    width: 60%;
+    padding: 20px;
+    background: linear-gradient(to right, #ab85d2, #acacac);
+    color: #fff;
+    align-content: center;
+    justify-content: center;
     
- }
- .logo{
-    color:aliceblue;
-    font-size: 1.5em;
-    font-weight: bold;
- }
- .nav-Menuitems{
-    list-style: none;
-    display:flex;
- }
- .nav-Menuitems li{
-    margin-right: 20px;
-    color: aliceblue;
-    font-size: 1em;
-    font-weight: bold;
- }
- .main-content h1, .main-content p{
-    text-align: center;
-    text-size-adjust:2.0em;
- }
- .main-content{
-    background-image: url('softtronix_img.jpeg' )  ;
-    background-size:cover;
-    color: #0a0a0a;
-    text-align: center;
-    padding: 200px ;
- }
+}
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 15px;
+    color:black;
+} 
+input[type="text"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.right button {
+    background-color: #fff;
+    color: #333;
+}
+
+.right button:hover {
+    background-color: #eee;
+}
+ 
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Softtronix Sevices Pvt.Ltd</div>
-            <ul class="nav-Menuitems">
-                <li>Home</li>
-                <li>About us</li>
-                <li>Service</li>
-                <li>Contact us</li>
-            </ul>
-        </nav>
-    </header>
-    <section class="main-content ">
-        <h1>Creative Design</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim corrupti saepe, eum ipsa aperiam incidunt rerum officia qui debitis quaerat mollitia quibusdam tempora! Amet, non accusantium facilis recusandae atque excepturi!.</p>
-        </section>
+    
+    <div class="container">
+        <div class="left">
+        <h2>Login to Your Account</h2>
+        
+        <input type="text" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        
+        <button>Sign In</button>
+    </div>
+    <div class="right">
+        <h2>New Here?</h2>
+        <p>Sign up and discover a great<br> amount of new opportunities!</p>
+        <button ><a href="disharegister.html">Register</a></button>
+        
+    </div>  
+</div>
 </body>
 </html>
