@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f6f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #c8b4d3;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button {
+  background-color: #9662c2;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #9080a5;
+}
+
+.terms {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.terms a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Register</h1>
+  <form>
+    <div>
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="fname" placeholder="Your first name..">
+    </div>
+    <div>
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lname" placeholder="Your last name..">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email..">
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Your password..">
+    </div>
+    <div>
+      <label for="confirm_password">Confirm Password</label>
+      <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password..">
+    </div>
+    <div>
+      <input type="checkbox" id="terms" name="terms">
+      <label for="terms"> I accept the <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a>.</label>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</div>
+
+</body>
+</html>
