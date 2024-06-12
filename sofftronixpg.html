@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .banner {
+    width: 100%;
+    height: 120vh;
+    background-image: linear-gradient(rgba(46, 34, 146, 0.75), rgba(17, 43, 32, 0.75)),
+      url(https://i.pinimg.com/564x/c2/96/28/c296282233fc6aa1e3827336048d3747.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .logo {
+    height: 20%;
+    width: 300px;
+    cursor: pointer;
+  }
+  .navbar {
+    width:85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+  }
+  .navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  .main{
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    display: flex;
+    font-size: larger;
+  }
+  .para{
+    text-align: center;
+    font-size: 30px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .btn{
+    background-color: white;
+            color: #000000;
+            padding: 20px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+  }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+          <img src="https://tse3.mm.bing.net/th?id=OIP.ccobKBUzTHG-kS_yC3r--QAAAA&pid=Api&P=0&h=220" class="logo" />
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="main">
+            <div class="para">
+                <h1>CREATIVE WEBSITE DESIGN</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus harum libero consequuntur nesciunt repudiandae officia, et iste laborum nobis modi, veritatis eius inventore facilis nisi unde. Inventore deserunt velit est.</p>
+                <button class="btn">Know more</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
