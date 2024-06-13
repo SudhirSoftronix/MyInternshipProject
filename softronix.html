@@ -12,6 +12,7 @@
         .main{
             width: 100%;
             position: relative;
+            display: flex;
         }
         table{
             width: 100%;
@@ -23,15 +24,33 @@
         .logo{
             width: 50px;
         }
+        td{
+            margin: 0px;
+            padding: 0px;
+        }
         ul{
-            text-align: right;
+            text-align: start;
+            right: initial;
         }
         li{
             display: inline;
             list-style: none;
-            padding: 20px;
+            padding: 10px;
             margin-right: 10px;
             font-size: 20px;
+            position: relative;
+        }
+        .log{
+            position: absolute;
+            top: 17px;
+            display: inline-block;
+            right: 150px;
+        }
+        .log button{
+            font-size: 20px;
+            background-color: rgb(214, 184, 144);
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 5px;
         }
         .content{
             align-items: center;
@@ -56,11 +75,9 @@
     <div class="main">
         <table>
             <tr>
-                <td>
-                    <div class="logo">
-                    <img src="../MyInternshipProject/imageaastha/soft.jpeg" height="50px" width="50px">
-                    </div>
-                </td>
+                <div class="logo">
+                <img src="../MyInternshipProject/imageaastha/soft.jpeg" height="50px" width="50px">
+                </div>
                 <td>
                     <div class="mydiv">   
                            Softtronix Services Pvt Ltd
@@ -71,9 +88,11 @@
                         <ul>
                             <li>Home</li>
                             <li>About</li>
-                            <li>Services</li>
                             <li>Contact</li>
                         </ul>
+                    </div>
+                    <div class="log">
+                        <button>Logout</button>
                     </div>
                 </td>
             </tr>
