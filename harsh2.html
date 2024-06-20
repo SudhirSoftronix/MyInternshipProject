@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Registration Form</title>
+    
+    <style>
+        body {
+            background-image: url('47.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 50%;
+            max-width: 600px;
+            background-color: rgba(64, 224, 208, 0.9); /* Light turquoise color with some transparency */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: black;
+        }
+        .container label {
+            display: block;
+            margin: 10px 0 5px;
+            color: black; /* Adjusted to be readable */
+        }
+        .container input[type="text"],
+        .container input[type="password"],
+        .container textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .container input[type="radio"] {
+            margin-left: 10px;
+            color: black;
+        }
+        .container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .row > div {
+            width: 48%;
+        }
+        .row .full-width {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form>
+            <!-- Row for First Name and Last Name -->
+            <div class="row">
+                <div>
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="First Name">
+                </div>
+                <div>
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+                </div>
+            </div>
+
+            <!-- Row for Mobile No and Gender -->
+            <div class="row">
+                <div>
+                    <label for="mobile">Mobile No</label>
+                    <input type="text" id="mobile" name="mobile" placeholder="Contact No">
+                </div>
+                <div>
+                    <label for="gender">Gender</label><br>
+                    <input type="radio" id="male" name="gender" value="male"><label for="male"> Male</label>
+                    <input type="radio" id="female" name="gender" value="female"><label for="female"> Female</label>
+                </div>
+            </div>
+
+            <!-- Full-width fields for Address, Username, and Password -->
+            <div class="row full-width">
+                <div>
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="4" placeholder="Address"></textarea>
+                </div>
+            </div>
+            <div class="row full-width">
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Username">
+                </div>
+            </div>
+            <div class="row full-width">
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+            </div>
+
+            <!-- Submit button -->
+            <input type="submit" value="Go">
+        </form>
+    </div>
+</body>
+</html>
