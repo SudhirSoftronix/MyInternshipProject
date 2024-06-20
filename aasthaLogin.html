@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+    href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet"/>
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
         }
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: url('./imageaastha/blurimg.jpg') no-repeat;
-            background-size: cover;
-            background-position: center;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url(./imageaastha/blurimg.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
         }
         header {
             position: fixed;
@@ -36,7 +41,7 @@
             justify-content: center;
             align-items: center;
         }
-        .wrap{
+        .container { 
             width: 420px;
             background: transparent;
             border: 2px solid rgba(255, 255, 255, .2);
@@ -45,17 +50,17 @@
             border-radius: 12px;
             padding: 30px 40px;
         }
-        .wrap h1{
+        .container h1 {            
             font-size: 36px;
             text-align: center;
         }
-        .wrap .input-txt{
+        .container .input-field{
             position: relative;
             width: 100%;
             height: 50px;
             margin: 30px 0;
         }
-        .input-txt input{
+        .input-field input{
             width: 100%;
             height: 100%;
             background: transparent;
@@ -67,10 +72,10 @@
             color: #fff;
             padding: 20px 45px 20px 20px;
         }
-        .input-txt input::placeholder{
+        .input-field input::placeholder{
             color: #fff;
         }
-        .input-txt i{
+        .input-field i{
             position: absolute;
             right: 20px;
             top: 30%;
@@ -78,11 +83,44 @@
             font-size: 20px;
         
         }
-        .wrap .forgot{
+        .invalid input {
+        border-color: #d93025;
+        }
+        .input-field .show-hide {
+        position: absolute;
+        right: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: #919191;
+        cursor: pointer;
+        padding: 3px;
+        }
+        .field .error {
+        display: flex;
+        align-items: center;
+        color: #d93025;
+        font-size: 11px;
+        display: none;
+        }
+        .invalid .error {
+        display: flex;
+        }
+        .error .error-icon {
+        margin-right: 6px;
+        font-size: 15px;
+        }
+        .create-password .error {
+        align-items: flex-start;
+        }
+        .create-password .error-icon {
+        margin-top: 4px;
+        }
+        .container .forgot{
             display: flex;
             justify-content: space-between;
             font-size: 14.5px;
-            margin: -15px 0 15px;
+            margin: -5px 0 5px;
         }
         .forgot label input{
             accent-color: #fff;
@@ -96,7 +134,7 @@
         .forgot a:hover{
             text-decoration: underline;
         }
-        .wrap .btn{
+        .container .btn{
             width: 100%;
             height: 45px;
             background: #fff;
@@ -109,7 +147,7 @@
             color: #333;
             font-weight: 600;
         }
-        .wrap .register{
+        .container .register{
             font-size: 14.5px;
             text-align: center;
             margin: 20px 0 15px;
@@ -122,32 +160,105 @@
         .register p a:hover{
             text-decoration: underline;
         }
+
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
         <h1>Welcome to Softtronix IT Solutions</h1>
     </header>
-    <div class="wrap">
-        <form action="">
-          <h1>Login</h1>
-          <div class="input-txt">
-            <input type="text" placeholder="Username" required>
-            <i class='bx bxs-user'></i>
+    <div class="container">
+      <form action="">
+        <h1>Login</h1>
+        <div class="field email-field">
+          <div class="input-field">
+            <input type="email" placeholder="Enter your email" class="email" />
           </div>
-          <div class="input-txt">
-            <input type="password" placeholder="Password" required>
-            <i class='bx bxs-lock-alt' ></i>
+          <span class="error email-error">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">Please enter a valid email</p>
+          </span>
+        </div>
+        <div class="field create-password">
+          <div class="input-field">
+            <input
+              type="password"
+              placeholder="Password"
+              class="password"
+            />
+            <i class="bx bx-hide show-hide"></i>
           </div>
-          <div class="forgot">
+          <span class="error password-error">
+            <i class="bx bx-error-circle error-icon"></i>
+            <p class="error-text">
+              Please enter atleast 8 charatcer with number, symbol, small and
+              capital letter.
+            </p>
+          </span>
+        </div>
+        <div class="forgot">
             <label><input type="checkbox">Remember Me</label>
             <a href="#">Forgot Password</a>
           </div>
-          <button type="submit" class="btn">Login</button>
-          <div class="register">
-            <p>Dont have an account? <a href="/aastharegister.html">Register</a></p>
-          </div>
-        </form>
-      </div> 
-</body>
+        <button type="submit" class="btn">Login</button>
+        <div class="register">
+          <p>Dont have an account? <a href="/aastharegister.html">Register</a></p>
+        </div>
+      </form>
+    </div>
+    <script>
+        const form = document.querySelector("form"),
+        emailField = form.querySelector(".email-field"),
+        emailInput = emailField.querySelector(".email"),
+        passField = form.querySelector(".create-password"),
+        passInput = passField.querySelector(".password");
+
+        function checkEmail() {
+        const emaiPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if (!emailInput.value.match(emaiPattern)) {
+            return emailField.classList.add("invalid"); 
+        }
+        emailField.classList.remove("invalid"); 
+        }
+
+        const eyeIcons = document.querySelectorAll(".show-hide");
+
+        eyeIcons.forEach((eyeIcon) => {
+        eyeIcon.addEventListener("click", () => {
+            const pInput = eyeIcon.parentElement.querySelector("input");
+            if (pInput.type === "password") {
+            eyeIcon.classList.replace("bx-hide", "bx-show");
+            return (pInput.type = "text");
+            }
+            eyeIcon.classList.replace("bx-show", "bx-hide");
+            pInput.type = "password";
+        });
+        });
+
+        function createPass() {
+        const passPattern =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+        if (!passInput.value.match(passPattern)) {
+            return passField.classList.add("invalid"); 
+        }
+        passField.classList.remove("invalid"); 
+        }
+
+        form.addEventListener("submit", (e) => {
+        e.preventDefault(); 
+        checkEmail();
+        createPass();
+        emailInput.addEventListener("keyup", checkEmail);
+        passInput.addEventListener("keyup", createPass);
+
+        if (
+            !emailField.classList.contains("invalid") &&
+            !passField.classList.contains("invalid")
+        ) {
+            location.href = form.getAttribute("action");
+        }
+        });
+    </script>
+  </body>
 </html>

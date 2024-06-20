@@ -3,129 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Page</title>
-    <style>
-        body{
-            background: url('./imageaastha/blurimg.jpg');
-            background-size: cover;
-            height: 95vh;
-        }
-        table{
-            border: none;
-            box-shadow: rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            background: transparent;
-            background-size: cover;
-            border: 2px solid rgba(255, 255, 255, .2);
-            backdrop-filter: blur(9px);
-            margin: 20px;
-            border-radius: 15px;
-        }
-        h1{
+    <title>Document</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration page</title>
+        <style>
+             * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: sans-serif;
-            font-size: 40px;
-            color: #fff;
-        }
-        td{
-            font-size: 16px;
-            font-weight: 500;
-            color: #fff;
-            font-family: sans-serif;
-        }
-        input{
-            border-radius: 5px;
-            border: none;
-            padding: 5px;
-            margin: 5px;
-            background: transparent;
-            border: none;
-            outline: none;
-            border: 2px solid rgba(255, 255, 255, .2);
-        }
-        select{
-            border-radius: 5px;
-            border: none;
-            padding: 5px;
-            margin: 5px;
-            background: transparent;
-            border: none;
-            outline: none;
-            border: 2px solid rgba(255, 255, 255, .2);
-        }
-        option{
-            background: transparent;
-        }
-        textarea{
-            border-radius: 5px;
-            border: none;
-            padding: 5px;
-            margin: 5px;
-            background: transparent;
-            border: none;
-            outline: none;
-            border: 2px solid rgba(255, 255, 255, .2);
-        }
-        .hover input{
-            font-size: 17px;
-            padding: 10px;
-            color: #fff;
-        }
-        .hover input:hover{
-            transition: 2ms;
-            font-weight: bold;
-            background-color: skyblue;
-            color: black;
-            box-shadow: 1px 1px 1px 1px black;
-        }
-    </style>
-</head>
-<body>
-<center>
-    <form name="registration form">
-        <table>
-            <thead><h1>Registration Form</h1></thead>
-            <tr>
-                <td>Name:</td>
-                <td><input type="text" name="name"/></td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td><input type="email" name="email"/></td>
-            </tr>
-            <tr>
-                <td>Phone:</td>
-                <td><input type="number" name="number"/></td>
-            </tr>
-            <tr>
-                <td>Gender:</td>
-                <td>
-                    <input type="radio" name="gender" value="male"/>Male
-                    <input type="radio" name="gender" value="female"/>Female
-                    <input type="radio" name="gender" value="trans"/>Others
-                </td>
-            </tr>
-            <tr>
-                <td>Education:</td>
-                <td>
-                    <select name="education">
-                        <option value="SS">SSC</option>
-                        <option value="HS">HSC</option>
-                        <option value="DI">Diploma</option>
-                        <option value="DE">Degree</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Address:</td>
-                <td><textarea name="address" cols="30" rows="10"></textarea></td>
-            </tr>
-            <tr>
-                <td class="hover" colspan="2" align="center">
-                    <input type="submit" value="Register"/>
-                </td>
-            </tr>
-        </table>
-    </form>
-</center>
-</body>
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: url('./imageaastha/blurimg.jpg') no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            .container{
+                width: 420px;
+                background: transparent;
+                border: 2px solid rgba(255, 255, 255, .2);
+                backdrop-filter: blur(9px);
+                color: #fff;
+                border-radius: 12px;
+                padding: 30px 40px;
+            }
+            .container h1{
+                font-size: 36px;
+                text-align: center;
+            }
+            .container .input-control{
+                position: relative;
+                width: 100%;
+                height: 50px;
+                margin: 30px 0;
+            }
+            .input-control input{
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+                border: 2px solid rgba(255, 255, 255, .2);
+                border-radius: 40px;
+                font-size: 16px;
+                color: #fff;
+                padding: 20px 45px 20px 20px;
+            }
+            .input-control input::placeholder{
+                color: #fff;
+            }
+            .input-control.error input {
+                border-color: #ff3860;
+            }
+            .input-control .error {
+                color: #ff3860;
+                font-size: 11px;
+                height: 13px;
+                padding: 10px;
+                margin-left: 10px;
+            }
+            .container .btn{
+                width: 100%;
+                height: 45px;
+                background: #fff;
+                border: none;
+                outline: none;
+                border-radius: 40px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+                cursor: pointer;
+                font-size: 16px;
+                color: #333;
+                font-weight: 600;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form id="form" action="/">
+                <h1>Registration</h1>
+                <div class="input-control">
+                    <input id="username" placeholder="Username" name="username" type="text">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <input id="email" placeholder="Email" name="email" type="text">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <input id="password" placeholder="Create Password" name="password" type="password">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <input id="password2" placeholder="Confirm Password" name="password2" type="password">
+                    <div class="error"></div>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+        <script>
+            const form = document.getElementById('form');
+            const username = document.getElementById('username');
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            const password2 = document.getElementById('password2');
+
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+
+                validateInputs();
+            });
+
+            const setError = (element, message) => {
+                const inputControl = element.parentElement;
+                const errorDisplay = inputControl.querySelector('.error');
+
+                errorDisplay.innerText = message;
+                inputControl.classList.add('error');
+                inputControl.classList.remove('success')
+            }
+
+            const setSuccess = element => {
+                const inputControl = element.parentElement;
+                const errorDisplay = inputControl.querySelector('.error');
+
+                errorDisplay.innerText = '';
+                inputControl.classList.add('success');
+                inputControl.classList.remove('error');
+            };
+
+            const isValidEmail = email => {
+                const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
+            }
+
+            const validateInputs = () => {
+                const usernameValue = username.value.trim();
+                const emailValue = email.value.trim();
+                const passwordValue = password.value.trim();
+                const password2Value = password2.value.trim();
+
+                if(usernameValue === '') {
+                    setError(username, 'Username is required');
+                } else {
+                    setSuccess(username);
+                }
+
+                if(emailValue === '') {
+                    setError(email, 'Email is required');
+                } else if (!isValidEmail(emailValue)) {
+                    setError(email, 'Provide a valid email address');
+                } else {
+                    setSuccess(email);
+                }
+
+                if(passwordValue === '') {
+                    setError(password, 'Password is required');
+                } else if (passwordValue.length < 8 ) {
+                    setError(password, 'Password must be at least 8 character.')
+                } else {
+                    setSuccess(password);
+                }
+
+                if(password2Value === '') {
+                    setError(password2, 'Please confirm your password');
+                } else if (password2Value !== passwordValue) {
+                    setError(password2, "Passwords doesn't match");
+                } else {
+                    setSuccess(password2);
+                }
+
+            };
+        </script>
+    </body>    
 </html>
