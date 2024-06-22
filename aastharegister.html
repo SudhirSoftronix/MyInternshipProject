@@ -2,130 +2,151 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Page</title>
+    <title>Registration page</title>
     <style>
-        body{
-            background: url('./imageaastha/blurimg.jpg');
-            background-size: cover;
-            height: 95vh;
-        }
-        table{
-            border: none;
-            box-shadow: rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            background: transparent;
-            background-size: cover;
-            border: 2px solid rgba(255, 255, 255, .2);
-            backdrop-filter: blur(9px);
-            margin: 20px;
-            border-radius: 15px;
-        }
-        h1{
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: sans-serif;
-            font-size: 40px;
-            color: #fff;
-        }
-        td{
-            font-size: 16px;
-            font-weight: 500;
-            color: #fff;
-            font-family: sans-serif;
-        }
-        input{
-            border-radius: 5px;
-            border: none;
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: url('./imageaastha/blurimg.jpg') no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            .container{
+                width: 420px;
+                background: transparent;
+                border: 2px solid rgba(255, 255, 255, .2);
+                backdrop-filter: blur(9px);
+                color: #fff;
+                border-radius: 12px;
+                padding: 30px 40px;
+            }
+            .container h1{
+                font-size: 36px;
+                text-align: center;
+            }
+            .container .input-control{
+                position: relative;
+                width: 100%;
+                height: 50px;
+                margin: 30px 0;
+            }
+            .input-control input{
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+                border: 2px solid rgba(255, 255, 255, .2);
+                border-radius: 40px;
+                font-size: 16px;
+                color: #fff;
+                padding: 20px 45px 20px 20px;
+            }
+            .input-control input::placeholder{
+                color: #fff;
+            }
+            .input-control span {
+            color: red;
+            font-size: 10px;
+            margin-left: 25px;
             padding: 5px;
-            margin: 5px;
-            background: transparent;
-            border: none;
-            outline: none;
-            border: 2px solid rgba(255, 255, 255, .2);
-        }
-        select{
-            border-radius: 5px;
-            border: none;
-            padding: 5px;
-            margin: 5px;
-            background: transparent;
-            border: none;
-            outline: none;
-            border: 2px solid rgba(255, 255, 255, .2);
-        }
-        option{
-            background: transparent;
-        }
-        textarea{
-            border-radius: 5px;
-            border: none;
-            padding: 5px;
-            margin: 5px;
-            background: transparent;
-            border: none;
-            outline: none;
-            border: 2px solid rgba(255, 255, 255, .2);
-        }
-        .hover input{
-            font-size: 17px;
-            padding: 10px;
-            color: #fff;
-        }
-        .hover input:hover{
-            transition: 2ms;
-            font-weight: bold;
-            background-color: skyblue;
-            color: black;
-            box-shadow: 1px 1px 1px 1px black;
-        }
-    </style>
-</head>
-<body>
-<center>
-    <form name="registration form">
-        <table>
-            <thead><h1>Registration Form</h1></thead>
-            <tr>
-                <td>Name:</td>
-                <td><input type="text" name="name"/></td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td><input type="email" name="email"/></td>
-            </tr>
-            <tr>
-                <td>Phone:</td>
-                <td><input type="number" name="number"/></td>
-            </tr>
-            <tr>
-                <td>Gender:</td>
-                <td>
-                    <input type="radio" name="gender" value="male"/>Male
-                    <input type="radio" name="gender" value="female"/>Female
-                    <input type="radio" name="gender" value="trans"/>Others
-                </td>
-            </tr>
-            <tr>
-                <td>Education:</td>
-                <td>
-                    <select name="education">
-                        <option value="SS">SSC</option>
-                        <option value="HS">HSC</option>
-                        <option value="DI">Diploma</option>
-                        <option value="DE">Degree</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>Address:</td>
-                <td><textarea name="address" cols="30" rows="10"></textarea></td>
-            </tr>
-            <tr>
-                <td class="hover" colspan="2" align="center">
-                    <input type="submit" value="Register"/>
-                </td>
-            </tr>
-        </table>
-    </form>
-</center>
-</body>
+            }
+            .container .btn{
+                width: 100%;
+                height: 45px;
+                background: #fff;
+                border: none;
+                outline: none;
+                border-radius: 40px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+                cursor: pointer;
+                font-size: 16px;
+                color: #333;
+                font-weight: 600;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form id="form" class="form">
+                <h1>Registration</h1>
+                <div class="input-control">
+                    <input id="name" placeholder="Full Name" name="fname" type="text">
+                    <span id="name_error"></span>
+                </div>
+                <div class="input-control">
+                    <input id="email" placeholder="Email" name="email" type="text">
+                    <span id="email_error"></span>
+                </div>
+                <div class="input-control">
+                    <input id="mob" placeholder="Mobile Number" name="phone" type="number">
+                    <span id="mob_error"></span>
+                </div>
+                <div class="input-control">
+                    <input id="password" placeholder="Create Password" name="password" type="password">
+                    <span id="pass_error"></span>
+                </div>
+                <div class="input-control">
+                    <input id="password2" placeholder="Confirm Password" name="password2" type="password">
+                    <span id="cpass_error"></span>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+        <script>
+            const name = document.getElementById("name");
+            const email = document.getElementById("email");
+            const mob = document.getElementById("mob");
+            const password = document.getElementById("password");
+            const password2 = document.getElementById("password2");
+            const form = document.getElementById("form");
+            const name_error = document.getElementById("name_error");
+            const email_error = document.getElementById("email_error");
+            const mob_error = document.getElementById("mob_error");
+            const pass_error = document.getElementById("pass_error");
+            const cpass_error = document.getElementById("cpass_error");
+
+            form.addEventListener('submit',e =>{
+                if(name.value === '' || name.value == null)
+                {
+                    e.preventDefault();
+                    name_error.innerHTML = "Name is required";
+                }
+                var email_check = /^[a-zA-Z0-9+*%#@]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+                if(!email.value.match(email_check))
+                {
+                    e.preventDefault();
+                    email_error.innerHTML = "Valid email is required";
+                }
+                var mob_check = /^([0-9]+){10}$/;
+                if(!mob.value.match(mob_check))
+                {
+                    e.preventDefault();
+                    mob_error.innerHTML = "Ten-digit number is required";
+                }
+                var pass_check = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{8,15}$/;
+                if(!password.value.match(pass_check))
+                {
+                    e.preventDefault();
+                    pass_error.innerHTML = "Create a valid password";
+                }
+                var cpass_check = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&^])[A-Za-z\d@.#$!%*?&]{8,15}$/;
+                if(!password2.value.match(cpass_check))
+                {
+                    e.preventDefault();
+                    cpass_error.innerHTML = "Please confirm a valid password";
+                }
+            });
+        </script>
+    </body>    
 </html>
