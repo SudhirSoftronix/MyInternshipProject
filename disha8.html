@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            }
+        
+        .img{
+            float:right;
+            height:600px;
+        }
+        .input{
+            width:300px;
+            padding:5px;
+        }
+        .container{
+            display: flex;
+            background-color: #b4e2ec;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .main{
+            display:flex;
+            flex:1;
+            align-items:center;
+            justify-content:center;
+        }
+       
+        h1{
+            text-align: center;
+            color:rgb(39, 74, 228);
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .btn{
+            width:100px;
+            background-color: rgb(85, 195, 85);
+            color:black;
+            border-radius: 50px;
+            
+        }
+        .btn:hover{
+            background: linear-gradient(to right, rgb(107, 183, 107) 0%, #596eeb);
+        }
+        table{
+            background-color:white ;
+            padding:40px;
+            border-radius: 10px;
+        }
+        .error{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+    <div class="main">
+        <form>
+            <h1>Login Form</h1>
+            <table>
+                <tr>
+                    <td>
+                        Uername:&nbsp&nbsp<input class="input" type="text" name="user" id="fname">
+                        <span class="error" id="fnameError"></span>
+                    </td>
+                    &nbsp&nbsp&nbsp
+                </tr>
+                <tr>
+                    
+                    <td>
+                        Password:&nbsp<input class="input" type="Password" name="pass" id="password">
+                        <span class="error" id="passError"></span>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2">
+                        &nbsp&nbsp
+                       <center> <input  class=" btn" type="submit" name="Submit" id="submit"></center>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        </div>
+        <div class="img">
+        <img src="loginimg.jpg" width="500px" height="600px" >
+    </div>
+    </div>
+    <script>
+        var name=document.getElementById("fname");
+        var password=document.getElementById("password");
+
+        submit.addEventListener("click",function(event){
+            event.preventDefault();
+
+        var fnamestr=/^[a-zA-z\s]+$/;
+        var passwordstr = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+    
+        if(fnamestr.test(fname.value)) {
+            fnameError.innerHTML="";
+            } else{
+              fnameError.innerHTML="*Invalid";
+            }  
+        if(passwordstr.test(password.value)){
+              passError.innerHTML="";
+            }else{
+              passError.innerHTML="*Invalid";
+            }  
+            
+         if(fnameError.innerHTML==="" && passError===""){
+                alert("Sign in Successfully");
+         }   
+    });
+    </script>
+</body>
+</html>

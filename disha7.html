@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            background-color: white;
+            justify-content: center;
+            display:flex;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container{
+            background-color: rgb(136, 175, 207);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow:rgb(93, 168, 168);
+            width:500px;
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        textarea{
+            width:300px;
+            height:200px;
+        }
+        .but{
+            width:100px;
+            padding:10px
+            
+        }
+        .error{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration form</h1>
+        <form>
+            <table>
+                <tr>
+                <td>
+                        <label for="name">Name</label>
+                        
+                        &nbsp&nbsp&nbsp
+                </td>
+                <td>
+                        <input type="text" name="fname" id="fname">
+                        <span class="error" id="fnameError"></span>
+                        <br>
+                        &nbsp&nbsp&nbsp
+                        FirstName
+                </td>
+           
+                <td>
+                    <input type="text" name="lname" id="lname">
+                    <span class="error" id="lnameError"></span>
+                    <br>
+                    LastName
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="name">Contact No</label>
+                &nbsp&nbsp&nbsp
+           </td>
+            <td>
+                <input type="number" name="mob" id="number">
+                <span class="error" id="numError"></span>
+                <br>
+                &nbsp&nbsp&nbsp
+                Contact No.
+            </td>
+            <td>
+                Gender
+                <input type="radio" name="gender" value="Male">Male
+                <input type="radio" name="gender" value="Male">Female
+                <span class="error" id="genderError"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="address">Address</label>
+                &nbsp&nbsp&nbsp
+            </td>
+            <td colspan="3"> 
+                <textarea type="text" name="address"id="address"></textarea>
+                <span class="error" id="addressError"></span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="State">State</label></td>
+            <td colspan="3">
+                <select id="state" name="state">
+                    <option value="AP">Andhra Pradesh</option>
+                    <option value="AR">Arunachal Pradesh</option>
+                    <option value="AS">Assam</option>
+                    <option value="BR">Bihar</option>
+                    <option value="CT">Chhattisgarh</option>
+                    <option value="GA">Gujarat</option>
+                    <option value="HR">Haryana</option>
+                    <option value="HP">Himachal Pradesh</option>
+                    <option value="JK">Jammu and Kashmir</option>
+                    <option value="GA">Goa</option>
+                    <option value="JH">Jharkhand</option>
+                    <option value="KA">Karnataka</option>
+                    <option value="KL">Kerala</option>
+                    <option value="MP">Madhya Pradesh</option>
+                    <option value="MH">Maharashtra</option>
+                        <option value="MN">Manipur</option>
+                        <option value="ML">Meghalaya</option>
+                    <option value="MZ">Mizoram</option>
+                    <option value="NL">Nagaland</option>
+                    <option value="OR">Odisha</option>
+                    <option value="PB">Punjab</option>
+                    <option value="RJ">Rajasthan</option>
+                    <option value="SK">Sikkim</option>
+                    <option value="TN">Tamil Nadu</option>
+                    <option value="TG">Telangana</option>
+                    <option value="TR">Tripura</option>
+                    <option value="UT">Uttarakhand</option>
+                    <option value="UP">Uttar Pradesh</option>
+                    <option value="WB">West Bengal</option>
+                    <option value="AN">Andaman and Nicobar Islands</option>
+                    <option value="CH">Chandigarh</option>
+                    <option value="DN">Dadra and Nagar Haveli</option>
+                    <option value="DD">Daman and Diu</option>
+                    <option value="DL">Delhi</option>
+                    <option value="LD">Lakshadweep</option>
+                    <option value="PY">Puducherry</option>
+                </select>
+                <span class="error" id="stateError"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="user">UserName</label>
+            </td>
+            <td colspan="2">
+                &nbsp&nbsp&nbsp
+                <input type="text" name="user"id="user">
+                <span class="error" id="userError"></span>
+                <br>
+                &nbsp&nbsp&nbsp
+                UserName
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <label for="pass">Password</label>
+            </td>
+            
+            <td colspan="2">
+                &nbsp&nbsp&nbsp
+                <input type="password" name="pass" id="pass">
+                <span class="error" id="passError"></span>
+                <br>
+                &nbsp&nbsp&nbsp
+                Password
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <center><input  class="but" type="Submit" value="Submit" id="submit"></center>
+            </td>
+        </tr>
+            </table>      
+        </form>
+    </div>
+    <script>
+        var fname = document.getElementById("fname");
+        var lname = document.getElementById("lname");
+        var number = document.getElementById("number");
+        var address = document.getElementById("address");
+        var state = document.getElementById("state");
+        var user = document.getElementById("user");
+        var pass = document.getElementById("pass");
+        var submit = document.getElementById("submit");
+        var gender = document.getElementsByName("gender");
+
+        submit.addEventListener("click",function(event){
+          event.preventDefault();
+
+            var fnameError = document.getElementById("fnameError");
+            var lnameError = document.getElementById("lnameError");
+            var numError = document.getElementById("numError");
+            var addressError = document.getElementById("addressError");
+            var stateError = document.getElementById("stateError");
+            var userError = document.getElementById("userError");
+            var passError = document.getElementById("passError");
+            var genderError = document.getElementById("genderError");
+
+            var fnamestr = /^[a-zA-Z\s]+$/;
+            var lnamestr = /^[a-zA-Z\s]+$/;
+            var numstr = /^[0-9]{10}$/;
+            var addressstr = /^[a-zA-Z0-9\s,]+$/;
+            var userstr = /^[a-zA-Z0-9\s]+$/;
+            var passstr = /^[a-zA-Z0-9!@#$%^&*]{6,12}$/;
+
+            if(fnamestr.test(fname.value)) {
+            fnameError.innerHTML="";
+            } else{
+              fnameError.innerHTML="*Invalid";
+            }
+
+            if(lnamestr.test(lname.value)){
+              lnameError.innerHTML="";
+            }else{
+              lnameError.innerHTML="*Invalid";
+            }
+
+            if(numstr.test(number.value)){
+              numError.innerHTML="";
+            }else{
+              numError.innerHTML="*Invalid";
+            }
+
+            if(addressstr.test(address.value)){
+              addressError.innerHTML="";
+            }else{
+              addressError.innerHTML="*Invalid";
+            }
+
+            if(state.value === ""){
+              stateError.innerHTML="*Select State";
+            }else{
+              stateError.innerHTML="";
+            }
+
+            if(userstr.test(user.value)){
+              userError.innerHTML="";
+            }else{
+              userError.innerHTML="*Invalid";
+            }
+
+            if(passstr.test(pass.value)){
+              passError.innerHTML="";
+            }else{
+              passError.innerHTML="*Invalid";
+            }
+
+            var genderChecked = false;
+            for(var i = 0; i < gender.length; i++){
+              if(gender[i].checked){
+                genderChecked = true;
+                break;
+              }
+            }
+
+            if(!genderChecked){
+              genderError.innerHTML="*Select Gender";
+            }else{
+              genderError.innerHTML="";
+            }
+
+            if (fnameError.innerHTML === "" && lnameError.innerHTML === "" && numError.innerHTML === "" && addressError.innerHTML === "" && stateError.innerHTML === "" && userError.innerHTML === "" && passError.innerHTML === "" && genderError.innerHTML === "") {
+                alert("Form submitted successfully");
+            }
+        });
+    </script>
+</body>
+</html>

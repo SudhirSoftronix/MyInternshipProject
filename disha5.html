@@ -74,7 +74,9 @@ button:hover {
 .right button:hover {
     background-color: #eee;
 }
- 
+.error{
+    color:red;
+}
     </style>
 </head>
 <body>
@@ -83,10 +85,12 @@ button:hover {
         <div class="left">
         <h2>Login to Your Account</h2>
         
-        <input type="text" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
+        <input class="input" type="text" id="email" placeholder="Email" required>
+        <span class="error" id="emailError"></span>
+        <input class="input"type="password"id="password" placeholder="Password" required>
+        <span class="error" id="passError"></span>
         
-        <button>Sign In</button>
+        <button id="submit">Sign In</button>
     </div>
     <div class="right">
         <h2>New Here?</h2>
@@ -95,5 +99,35 @@ button:hover {
         
     </div>  
 </div>
+<script>
+     var email = document.getElementById("email");
+    var password = document.getElementById("password");
+
+    submit.addEventListener("click",function(event){
+        event.preventDefault();
+        
+        var emailError = document.getElementById("emailError");
+        var passwordError = document.getElementById("passError");
+
+        var emailstr = /^[a-zA-Z0-9+*%#@]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+        var passwordstr = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
+        if(emailstr.test(email.value)){
+              emailError.innerHTML="";
+            }else{
+              emailError.innerHTML="*Invalid";
+            }
+
+        if(passwordstr.test(password.value)){
+              passwordError.innerHTML="";
+            }else{
+              passwordError.innerHTML="*Invalid";
+            }  
+            
+        if(emailError.innerHTML==="" && passwordError===""){
+            alert("Sign in Successfully");
+        }    
+        });
+</script>
 </body>
 </html>

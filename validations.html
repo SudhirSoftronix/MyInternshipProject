@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Password:<input type="text" id="input" name="name" required >
+    <button id="but">Click me</button>
+    <p id="demo"></p>
+    
+    <script>
+        var input=document.getElementById("input");
+        var para=document.getElementById("demo");
+        var but=document.getElementById("but");
+        but.addEventListener("click",function()
+        {
+            //var str=/^[a-zA-Z\s]+$/;  //regular expression(regex)-----Name-------
+            //var str=/^[a-zA-Z0-9+*%#@]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;-----Email--------
+            var str=/^[a-zA-Z0-9!@#$%^&*]{6,16}$/;//------password-----
+            //var str=/^([a-z]+)+([A-Z]+)+([0-9]+)+([@#+_*]+){8}$/;
+           //var str=/^[0-9]{10}$ //PhoneNumber
+        if(str.test(input.value))
+        {
+            para.innerHTML="valid";
+        }
+        else
+        {
+            para.innerHTML="Invalid";
+        }
+    });
+
+    //"[a-zA-Z0-9+_-.]+@[a-zA-Z0-9_-]+\.[a-zA-Z]"   -----Email validation-
+    </script>
+</body>
+</html>

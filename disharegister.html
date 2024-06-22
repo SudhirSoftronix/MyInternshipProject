@@ -5,7 +5,7 @@
 <style>
 body {
   font-family: Arial, sans-serif;
-  background-color: #f6f8f8;
+  background-color: #c3dded;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  background-color: #c8b4d3;
+  background-color: #8ecbe7;
   padding: 30px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -25,7 +25,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-input[type="text"], input[type="password"], input[type="email"] {
+.input{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -35,12 +35,12 @@ input[type="text"], input[type="password"], input[type="email"] {
   border-radius: 4px;
 }
 
-input[type="checkbox"] {
+#terms{
   margin-right: 5px;
 }
 
 button {
-  background-color: #9662c2;
+  background-color: #4476c8;
   color: white;
   padding: 12px 20px;
   margin: 8px 0;
@@ -48,10 +48,12 @@ button {
   cursor: pointer;
   width: 100%;
   border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 button:hover {
-  background-color: #9080a5;
+  background-color: #5f95be;
 }
 
 .terms {
@@ -63,6 +65,9 @@ button:hover {
   color: #4CAF50;
   text-decoration: none;
 }
+.error {
+  color: red;
+}
 </style>
 </head>
 <body>
@@ -72,31 +77,102 @@ button:hover {
   <form>
     <div>
       <label for="fname">First Name</label>
-      <input type="text" id="fname" name="fname" placeholder="Your first name..">
+      <input class="input" type="text" id="fname" name="fname" placeholder="Your first name.." required>
+      <p class="error" id="fnameError"></p>
     </div>
     <div>
       <label for="lname">Last Name</label>
-      <input type="text" id="lname" name="lname" placeholder="Your last name..">
+      <input class="input" type="text" id="lname" name="lname" placeholder="Your last name.." required>
+      <p class="error" id="lnameError"></p>
     </div>
     <div>
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="Your email..">
+      <input class="input" type="email" id="email" name="email" placeholder="Your email.." required>
+      <p class="error" id="emailError"></p>
     </div>
     <div>
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Your password..">
+      <input class="input" type="password" id="password" name="password" placeholder="Your password.." required>
+      <p class="error" id="passError"></p>
     </div>
     <div>
       <label for="confirm_password">Confirm Password</label>
-      <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password..">
+      <input class="input"type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password.." required>
+      <p class="error" id="cpassError"></p>
     </div>
     <div>
-      <input type="checkbox" id="terms" name="terms">
+      <input  type="checkbox" id="terms" name="terms">
       <label for="terms"> I accept the <a href="#">Terms of Use</a> & <a href="#">Privacy Policy</a>.</label>
+      <p class="error" id="termsError"></p>
     </div>
-    <button type="submit">Register</button>
+    <button id="submit" type="submit">Register</button>
   </form>
 </div>
+<script>
+        var fname = document.getElementById("fname");
+        var lname = document.getElementById("lname");
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        var confirmPassword = document.getElementById("confirm_password");
+        var terms = document.getElementById("terms");
+        var submit = document.getElementById("submit");
 
+        submit.addEventListener("click",function(event){
+          event.preventDefault();
+
+            var fnameError = document.getElementById("fnameError");
+            var lnameError = document.getElementById("lnameError");
+            var emailError = document.getElementById("emailError");
+            var passwordError = document.getElementById("passError");
+            var confirmPasswordError = document.getElementById("cpassError");
+            var termsError = document.getElementById("termsError");
+
+            var fnamestr = /^[a-zA-Z\s]+$/;
+            var lnamestr = /^[a-zA-Z\s]+$/;
+            var emailstr = /^[a-zA-Z0-9+*%#@]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+            var passwordstr = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
+            if(fnamestr.test(fname.value)) {
+            fnameError.innerHTML="";
+            } else{
+              fnameError.innerHTML="*Invalid";
+            }
+
+            if(lnamestr.test(lname.value)){
+              lnameError.innerHTML="";
+            }else{
+              lnameError.innerHTML="*Invalid";
+            }
+
+            if(emailstr.test(email.value)){
+              emailError.innerHTML="";
+            }else{
+              emailError.innerHTML="*Invalid";
+            }
+
+            if(passwordstr.test(password.value)){
+              passwordError.innerHTML="";
+            }else{
+              passwordError.innerHTML="*Invalid";
+            }
+
+            if(confirmPassword.value != password.value){
+              confirmPasswordError.innerHTML="*Password do not match";
+            }
+            else{
+              confirmPasswordError.innerHTML="";
+            }
+
+            if (!terms.checked) {
+                termsError.innerHTML = "*You must accept the terms and conditions";
+            } else {
+                termsError.innerHTML = "";
+            }
+
+            if (fnameError.innerHTML === "" && lnameError.innerHTML === "" && emailError.innerHTML === "" && passwordError.innerHTML === "" && confirmPasswordError.innerHTML === "" && termsError.innerHTML === "") {
+                alert("Form submitted successfully");
+            }
+        });
+</script>
 </body>
 </html>

@@ -65,6 +65,9 @@ button {
 button:hover {
   background-color: #45a049;
 }
+.error{
+  color:red;
+}
 </style>
 </head>
 <body>
@@ -76,19 +79,62 @@ button:hover {
   <form>
     <div class="form-group">
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="fname" name="name" required>
+      <span class="error" id="fnameError"></span>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
+      <span class="error" id="emailError"></span>
     </div>
     <div class="form-group">
       <label for="message">Message:</label>
       <textarea id="message" name="message" required></textarea>
+      <span class="error" id="messageError"></span>
     </div>
-    <button type="submit">Submit</button>
+    <button  id="submit"type="submit">Submit</button>
   </form>
 </div>
+<script>
+    var name=document.getElementById("fname");
+    var email=document.getElementById("email");
+    var message=document.getElementById("message");
+    var submit = document.getElementById("submit");
 
+    submit.addEventListener("click",function(event){
+      event.preventDefault();
+
+      var fnameError=document.getElementById("fnameError");
+      var emailError=document.getElementById("emailError");
+      var messageError=document.getElementById("messageError");
+
+      var fnamestr= /^[a-zA-z\s]+$/;
+      var emailstr = /^[a-zA-Z0-9+*%#@]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+      var messagestr=/^[a-zA-Z0-9\s]+$/;
+
+      if(fnamestr.test(fname.value)) {
+            fnameError.innerHTML="";
+            } else{
+              fnameError.innerHTML="*Invalid";
+            }
+
+      if(emailstr.test(email.value)){
+              emailError.innerHTML="";
+            }else{
+              emailError.innerHTML="*Invalid";
+            } 
+            
+      if(messagestr.test(message.value)) {
+            messageError.innerHTML="";
+            } else{
+              messageError.innerHTML="*Invalid";
+            }   
+            
+      if(nameError.innerHTML==="" && emailError.innerHTML==="" && messageError.innerHTML==="")
+      {
+        alert("Form submitted successfully")
+      }      
+    });
+</script>
 </body>
 </html>
